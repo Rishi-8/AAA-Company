@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.liferay.aaa.data.model.Customer" />
+	<import class="com.liferay.aaa.data.model.Dservice" />
+	<class name="com.liferay.aaa.data.model.impl.CustomerImpl" table="DM_Customer">
+		<cache usage="read-write" />
+		<id name="customerId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="customerName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="customerEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="customerAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="customerNIC" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="customerContact" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dserviceId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.liferay.aaa.data.model.impl.DserviceImpl" table="DM_Dservice">
+		<cache usage="read-write" />
+		<id name="dserviceId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="serviceTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="serviceDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="serviceRate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="serviceDuration" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

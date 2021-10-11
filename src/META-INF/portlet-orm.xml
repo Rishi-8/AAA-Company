@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.liferay.aaa.data.model.impl.CustomerModelImpl">
+		<attributes>
+			<id name="customerId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="customerName" />
+			<basic name="customerEmail" />
+			<basic name="customerAddress" />
+			<basic name="customerNIC" />
+			<basic name="customerContact" />
+			<basic name="dserviceId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.liferay.aaa.data.model.impl.DserviceModelImpl">
+		<attributes>
+			<id name="dserviceId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="serviceTitle" />
+			<basic name="serviceDescription" />
+			<basic name="serviceRate" />
+			<basic name="serviceDuration" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.liferay.aaa.data.model.impl.CustomerImpl" name="Customer">
+		<table name="DM_Customer" />
+		<attributes />
+	</entity>
+	<entity class="com.liferay.aaa.data.model.impl.DserviceImpl" name="Dservice">
+		<table name="DM_Dservice" />
+		<attributes />
+	</entity>
+</entity-mappings>
